@@ -1,4 +1,4 @@
-//@Library("app-lib") _
+@Library("sharedlibrary") _
 pipeline {
   agent any
 
@@ -11,14 +11,8 @@ pipeline {
   parameters {
     choice choices: ['develop', 'qa', 'master'], description: 'Choose the branch to build', name: 'branchName'
   } */
+  
   stages {
-    stage('Maven Build'){
-      steps{
-       sh 'echo cooming soon'
-      } 
-    } 
-  }
-  /*stages {
     stage('Maven Build') {
       steps {
         sh 'mvn clean package'
@@ -26,7 +20,7 @@ pipeline {
     }
     stage('Deploy to Tomcat') {
       steps {
-        tomcatDeploy(["172.31.13.38","172.31.13.38","172.31.13.38"],"ec2-user","tomcat-dev")
+        tomcatDeploy("172.31.14.102","ec2-user","tomcat")
       }
     }
   }
@@ -35,5 +29,5 @@ pipeline {
       archiveArtifacts artifacts: 'target/*.war'
       cleanWs()
     }
-  }*/
+  }
 }
