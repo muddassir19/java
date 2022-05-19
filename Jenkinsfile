@@ -11,6 +11,13 @@ pipeline {
   parameters {
     choice choices: ['develop', 'qa', 'master'], description: 'Choose the branch to build', name: 'branchName'
   } */
+  stages {
+    stage('Maven Build'){
+      steps{
+       sh 'echo cooming soon'
+      } 
+    } 
+  }
   /*stages {
     stage('Maven Build') {
       steps {
