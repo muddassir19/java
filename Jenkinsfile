@@ -23,6 +23,7 @@ pipeline {
         tomcatDeploy("172.31.14.102","app1","tomcat")
       }
     }
+  }
   post {
     success {
       archiveArtifacts artifacts: 'target/*.war'
