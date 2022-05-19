@@ -1,8 +1,8 @@
-@Library("app-lib") _
+//@Library("app-lib") _
 pipeline {
   agent any
 
-  tools {
+  /*tools {
     maven 'maven3'
   }
   options {
@@ -10,8 +10,8 @@ pipeline {
   }
   parameters {
     choice choices: ['develop', 'qa', 'master'], description: 'Choose the branch to build', name: 'branchName'
-  }
-  stages {
+  } */
+  /*stages {
     stage('Maven Build') {
       steps {
         sh 'mvn clean package'
@@ -28,5 +28,5 @@ pipeline {
       archiveArtifacts artifacts: 'target/*.war'
       cleanWs()
     }
-  }
+  }*/
 }
