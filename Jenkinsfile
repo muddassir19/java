@@ -1,4 +1,4 @@
-@Library("sharedlibrary") _
+//@Library("sharedlibrary") _ 
 pipeline {
   agent any
 
@@ -18,16 +18,16 @@ pipeline {
         sh 'mvn clean package'
       }
     }
-    stage('Deploy to Tomcat') {
+    /*stage('Deploy to Tomcat') {
       steps {
         tomcatDeploy("172.31.14.102","app1","tomcat-dev1")
       }
-    }
+    }*/
   }
-  post {
+ /* post {
     success {
       archiveArtifacts artifacts: 'target/*.war'
       cleanWs()
     }
-  }
+  }*/
 }
